@@ -1,0 +1,142 @@
+body{
+    background-color: lavender;
+    font-family: "Gotham SSm",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.navBar{
+    background-color: bisque;
+    width: 100%;
+
+}
+
+.navBar .navs{
+    float: right;
+    margin-right: 10%;
+}
+
+.navBar .navs li{
+    float: left;
+    padding: 20px;
+
+}
+
+.navBar .navs > li:first-child{
+
+    padding-right: 0;
+
+}
+#logo {
+    padding: 6px;
+}
+#logo img {
+    max-height: 37px;
+    float: left;
+    margin-right: 5px;
+}
+#logo h1 {
+    float: left;
+    margin: 0;
+}
+.btn span,
+.nav  a span {
+    padding-left: 5px;
+}
+body .navbar {
+    border-radius: 0;
+}
+
+.notes .media {
+    float: left;
+    width: 50%;
+    height: 60%;
+}
+
+.notes {
+    border: solid grey;
+    margin-bottom: 5px;
+    overflow: hidden;
+    padding: 5px;
+    background-color: darkgray;
+    max-width: 1500px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.title{
+    font-size: 22px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.modal-dialog {
+    z-index: 1111;
+}
+.desc {
+    padding: 5px;
+}
+
+.action {
+    float: right;
+}
+
+.action span{
+    margin-right: 3px;
+}
+
+.button{
+    -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+    background-color:#FA2;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border:none;
+    font-size:16px;
+    font-weight:700;
+    height:36px;
+    padding:4px 16px;
+    text-shadow:#FE6 0 1px 0
+}
+
+
+.descriptionImage{
+    max-width: 100%;
+}
+
+.popup label{
+    margin-right: 20%;
+}
+
+.popup #titlelabel{
+    margin-right: 24%;
+}
+
+.popup .area{
+    margin-top: 15px;
+    border-radius: 10px;
+    width: 66%;
+}
+.popup .descriptionL{
+margin-left: 0%;
+}
+
+.popup{
+    position: fixed;
+    left: 30%;
+    top: 17%;
+    width: 40%;
+    border: 3px solid;
+}
+.removeMedia {
+    margin-top: 15px;
+}
+.modal-footer-btn {
+    margin: 0 -15px -30px;
+}
+
+.show {
+    display: block !important;
+}

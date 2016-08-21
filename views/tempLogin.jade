@@ -1,0 +1,30 @@
+html
+    head
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/tempLogin.css', rel='stylesheet')
+        script(src="/JavaScripts/jquery.js" rel="script/src")
+        script(src="/JavaScripts/loginDirective.js" rel="script/src")
+
+body(class="body")
+    div(id='container')
+        div(id='logo')
+            h2(id='logoId') Private Diary
+        div(id='tagLine')
+            h3() Your secret is safe with us
+        div(id='container_main')
+            div(class='signup')
+                div(id='coloumn')
+                    a(class='submit_button facebook_button', href='/diary/auth/facebook') Continue with Facebook
+                    a(class='submit_button google_button', href='#') Continue with Google
+                    input(type="button", id='createAccount' class="submit_button newaccount",value="Create New User")
+            div(class='login')
+                div(class='regular_login')
+                    if message
+                        span(class='wrong fa fa-exclamation-triangle') #{message}
+
+                    form(class='login_form', method='post',role='form')
+                        div(class='title') LOGIN
+                        div(class='form_column')
+                            input(class='text login_text', type='text', placeholder='Email', name='email')
+                            input(class='text login_text', type='password', placeholder='password', name='password')
+                            input(class="submit_button", type='submit',value="Login")

@@ -1,0 +1,12 @@
+html
+    head
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/login.css', rel='stylesheet')
+body(class="container panel panel-default")
+    div(class="login")
+        h1 #{title}
+        form(name="registration-form",class="form-horizontal", method="post",role="form")
+            input(type="text",class="form-control",placeholder="Name",required="required", name="username")
+            input(type="text",class="form-control",placeholder="email-id",required="required", name="email")
+            input(type="password",class="form-control",placeholder="Password",required="required", name="password")
+            input(type="submit", class="btn btn-primary btn-block btn-large",value="Register")

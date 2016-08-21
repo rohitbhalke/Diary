@@ -1,0 +1,104 @@
+html
+    head
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/newIndex.css', rel='stylesheet')
+        link(href='/stylesheets/font-awesome.css', rel='stylesheet')
+        link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.eot', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.svg', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', rel='stylesheet')
+
+        script(src="/JavaScripts/jquery.js" rel="script/src")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS",crossorigin="anonymous")
+        script(src="/JavaScripts/InterActions.js" rel="script/src")
+
+body
+    div(class='navbar navbar-inverse')
+        div(class='container')
+            div(id='logo', class='navbar-brand')
+                img(src="/images/batman.gif")
+                h1 BatDiary
+
+            ul(class='nav navbar-nav navbar-right')
+                li(id='add')
+                    a(href='#')
+                        i(class='fa fa-plus')
+                        span Add Note
+                li(id='')
+                    a(href='profile')
+                        i(class='fa fa-user fa-lg')
+                        span Profile
+                li(id='')
+                    a(href='/logout/')
+                        i(class='glyphicon glyphicon-off')
+                        span Logout
+
+    div(id='newnote',class='deck modal hide')
+        div(class="modal-backdrop fade in")
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-header')
+                    h4(class="modal-title") Add Note
+                div(class='modal-body')
+                    form(method="post",enctype="multipart/form-data")
+                        div(class='form-group')
+                            label(id='titlelabel' class='titleL') Title
+                            input(class='area form-control title',type="text",name='title')
+                        div(class='form-group')
+                            label(id='desclabel label' class='descriptionL') Description
+                            textarea(class='area form-control',name='description',cols="60",rows='11',id='desc')
+                        div(class='form-group')
+                            label(id='imagelabel') Add images
+                            input(type="file",name="photo",class="form-control media")
+                        div(class='modal-footer modal-footer-btn')
+                            input(class='button btn btn-default',id='cancel', type="button",value="Cancel",name="photo")
+                            input(class='button btn btn-primary',type="submit",value="Add Note")
+
+
+    div(class="deck container")
+        each val in data
+            section(class='row well note')
+                div(class='action btn-group pull-right')
+                    div(class='update btn btn-default' data-id!=id)
+                        i(class='glyphicon glyphicon-edit')
+                        span Update
+                        //input(class='button btn-primary update',type="button",value="",data-id!=id)
+                    div(class='delete btn btn-default' data-noteId=val.id)
+                        i(class='glyphicon glyphicon-trash')
+                        span Delete
+                        //input(class='button btn-primary delete',type="button",value="",data
+                div(class="title")= val.title
+                h4(class="hide  noteId")=val.id
+                if val.imagePath
+                    div(class='col-md-4 text-center img')
+                        img(class='descriptionImage',src=val.imagePath)
+                        button(type='button'  class='removeMedia btn btn-default' data-noteId=val.id,data-imagePath=val.imagePath)
+                            i(class='glyphicon glyphicon-trash')
+                            span Remove Media
+                div(class='desc col-md-8')= val.description
+
+
+    div(id='editNote',class='deck modal')
+        div(class='modal-dialog')
+            div(class='modal-content')
+                div(class='modal-header')
+                    h4(class="modal-title") Add Note
+                div(class='modal-body')
+                    form(method="post",enctype="multipart/form-data")
+                        div(class='form-group')
+                            label( class='titleL') Title
+                            input(id='editTitle',class='area form-control title',type="text",name='title')
+                        div(class='form-group')
+                            label(id='desclabel label' class='descriptionL') Description
+                            textarea(class='area form-control',name='description',cols="60",rows='11',id='editDescription')
+                        div(class='modal-footer modal-footer-btn')
+                            input(class='button btn btn-default',id='cancel', type="button",value="Cancel",name="photo")
+                            input(id='save',class='button btn btn-primary',type="button",value="Update Note")
+
+
+    div(class='hide')
+        input(id="objectId",type="hidden",name='objectId',data-id=id)
+
+

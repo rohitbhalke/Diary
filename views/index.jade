@@ -1,0 +1,57 @@
+html
+  head
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    link(href='/stylesheets/font-awesome.css', rel='stylesheet')
+    script(src="/JavaScripts/jquery.js" rel="script/src")
+    script(src="/JavaScripts/InterActions.js" rel="script/src")
+    
+
+  body(class="container panel panel-default")
+    div(id='logout')
+      a(href='/diary/logout/') LogOut
+    h1=title
+
+
+    div
+      form(name="Add-notes",class="form-horizontal", method="post",role="form",enctype="multipart/form-data")
+        div(class="form-group")
+          label(class="sr-only",for="text") Title
+          input(type="text",class="form-control",placeholder="Add title here", name="title")
+        div(class="form-group")
+          label(class="sr-only",for="description") Description
+          textarea(name="description",class="form-control",id="desc",placeholder="Add description here", cols="40", rows="5")
+        div(class="form-group")
+          input(type="file",class="form-control",name="photo")
+        input(type="submit", class="btn btn-success",value="Add Note")
+
+
+    div
+      ul(class="list-group")
+        each val in data
+          li(class="list-group-item card")
+            h2(class="time")= val.time
+            h3(class="title")= val.title
+            h4(class="description")= val.description
+            h4(class="id")=val.id
+            if val.imagePath
+              img(src=val.imagePath)
+              button(type='button' id='removeMedia') Roemove Media
+            div(id="editSection")
+              button(type="button"  class="btn btn-default btn-lg delete" data-id!=id)
+                span(class="glyphicon glyphicon-trash icon-remove-sign") Delete
+              button(type="button" id="updates" class="btn btn-default btn-lg update" data-id!=id)
+                span(class="glyphicon glyphicon-edit" id="editSpan") Edit
+
+
+    div(id="popup")
+      div(name="Edit-notes",id="editNote",class="form-horizontal")
+        div(class="form-group")
+          label(class="sr-only",for="text") Title
+          input(type="text",id="editTitle",class="form-control",placeholder="Add title here", name="title")
+        div(class="form-group")
+          label(class="sr-only",for="description") Description
+          textarea(name="description",id="editDescription",class="form-control" ,placeholder="Add description here", cols="40", rows="5")
+        input(type="text",id="id",class="form-control id",placeholder="id dont change", name="id")
+        input(type="submit", id="save",class="btn btn-success",value="Save")
+        input(type="submit", id="cancel",class="btn btn-success",value="Cancel")

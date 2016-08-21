@@ -1,0 +1,19 @@
+html
+    head
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/login.css', rel='stylesheet')
+        script(src="/JavaScripts/jquery.js" rel="script/src")
+        script(src="/JavaScripts/loginDirective.js" rel="script/src")
+
+
+body(class="container panel panel-default")
+
+    div(class="login")
+        h1 #{title}
+        form(name="login-form",class="form-horizontal", method="post",role="form")
+            input(type="text",class="form-control",placeholder="Username",required="required", name="email")
+            input(type="password",class="form-control",placeholder="Password",required="required", name="password")
+            input(type="submit", class="btn btn-primary btn-block btn-large",value="Log In")
+        input(type="button", id='createAccount' class="btn btn-primary btn-block btn-large",value="Create New User")
+        a(href='/auth/facebook') Login with Facebook
+        a(href='/auth/google') Login with Google

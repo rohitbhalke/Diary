@@ -1,0 +1,77 @@
+
+html
+    head
+        link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+        link(href='/stylesheets/newIndex.css', rel='stylesheet')
+        link(href='/stylesheets/font-awesome.css', rel='stylesheet')
+        link(href='/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.eot', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.svg', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.woff', rel='stylesheet')
+        link(href='/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2', rel='stylesheet')
+
+body
+    div(class='navbar')
+        div(id='logo')
+            img(src="/images/batman.gif")
+            h1 BatDiary
+
+        div(class='navs')
+            li(id='')
+                a(href='profile')
+                    i(class='fa fa-user fa-lg') Profile
+            li(id='')
+                a(href='/logout/')
+                    i(class='glyphicon glyphicon-off') Logout
+
+    div.container
+        div.page-header
+            h1 My Profile
+        if errors
+            each error in errors
+                div.alert.alert-danger
+                    span #{error.error}
+        if saved
+            div.alert.alert-success
+                span Your profile has been saved
+        form.login-form.form-horizontal(method='post', role='form')
+            input(name='_csrf', type='hidden', value=csrfToken)
+            div.form-group
+                label.col-sm-4 User Name
+                div.col-sm-8
+                    input.form-control(
+                    placeholder='Your Email Id',
+                    required=true,
+                    name='email',
+                    type='text',
+                    value=givenName)
+            div.form-group
+                label.col-sm-4 Old Password
+                div.col-sm-8
+                    input.form-control(placeholder='e.g. *****',
+                    required=true,
+                    name='oldpassword',
+                    type='password',
+                    value=zip)
+            div.form-group
+                label.col-sm-4 New Password
+                div.col-sm-8
+                    input.form-control(placeholder='e.g. *****',
+                    required=true,
+                    name='newpassword',
+                    type='password',
+                    value=zip)
+            div.form-group
+                label.col-sm-4 Confirm Password
+                div.col-sm-8
+                    input.form-control(placeholder='e.g. ****',
+                    required=true,
+                    name='confirmpassword',
+                    type='password',
+                    value=zip)
+            div.form-group
+                div.col-sm-offset-4.col-sm-8
+                    button.login.btn.btn-primary(type='submit') Save
+            div.pull-right
+                a(href=backToHomeUrl) Return to home page
