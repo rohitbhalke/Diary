@@ -18,9 +18,11 @@ var configDB = require('./config/database.js');
 var multipart = require('connect-multiparty');
 
 // configure database here
+
 console.log("Connecting TO database");
 mongoose.connect(configDB.url);
 console.log("Connection Success");
+
 //require('./config/passport.js')(passport);
 
 var app = express();
