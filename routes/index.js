@@ -1,11 +1,10 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var uuid = require('node-uuid');
-var multer	= require('multer');
 var path = require('path');
 var fs = require('fs');
 var utility = require('../utility/utility');
-
+var mv = require('mv');
 var diarySchema = require('../config/schema').diarySchema;
 
 var Model = mongoose.model('diarySchema', diarySchema);
@@ -87,11 +86,12 @@ router.post('/', function(req, res, next){
         var targetPath = path.join(__dirname, "../public/images/" + uploadDate + photo.name);
         var savePath = "/images/" + uploadDate + photo.name;
 
-        fs.rename(tempPath, targetPath, function (err, data) {
+        mv(tempPath, targetPath, function (err, data) {
             if (err) {
                 console.log(err);
             }
             else {
+                console.log("file moved");
                 postToGraph(req, savePath,res)
             }
         });
