@@ -1,3 +1,67 @@
+
+
+# Diary
+
+
+
+##############################################################################################################
+
+        Remember to switch the database urls, use localhost when running in local,
+        while pushing to heroku convert it to use the mongolab url mentioned
+
+
+#############################################################################################################
+
+
+A personalised diary where you can place all your emotions.
+
+
+to upload new codebase to heroku go to myapp folder
+git add .
+git commit -m "added console.log for db connectivity"
+git push heroku master
+heroku open
+
+
+
+heroku logs ------- to check logs
+
+
+heroku local web ---- to open app in local
+
+for heroku deployed app
+existing user is
+
+name : bhalke
+password : bhalke
+
+some links
+https://dashboard.heroku.com/apps/arcane-basin-16762/settings
+https://devcenter.heroku.com/articles/deploying-nodejs#prerequisites
+https://devcenter.heroku.com/articles/git
+https://scotch.io/tutorials/use-mongodb-with-a-node-application-on-heroku
+
+
+mongolab
+
+https://mlab.com/databases/privatediary#stats
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 How to run::
 1) your database is in c:\program files\MongoDB\Server\3.0\bin
 So start mongo db from there by command ::: "mongod"
@@ -56,3 +120,19 @@ Things to do
    c) responsive (really do i really want????)
 4) mongolab connectivity i.e. make our db hosted as free (yeaaa...)
 5) Finaly upload to heroku.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
