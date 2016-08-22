@@ -124,13 +124,13 @@ router.delete('/', function (req, res) {
         /*
          Now remove the image from file system if there is any
          */
-
-        var obj = deletedNote[0];
-        if(obj["imagePath"]){
-            var targetPath = path.join(__dirname, "../public/" + obj.imagePath);
-            fs.unlinkSync(targetPath);
+        if(deletedNote && deletedNote[0]){
+            var obj = deletedNote[0];
+            if(obj["imagePath"]){
+                var targetPath = path.join(__dirname, "../public/" + obj.imagePath);
+                fs.unlinkSync(targetPath);
+            }
         }
-
 
         /*
          The note is deleted. Now save back the object in DB
