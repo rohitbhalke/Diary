@@ -19,6 +19,7 @@ router.get('/json', function (req, res, next) {
     })
 });
 
+
 function isAuthenticated(req, res, next){
     if(req.isAuthenticated())
         return next();
