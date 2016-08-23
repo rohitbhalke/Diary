@@ -81,7 +81,6 @@ router.post('/', function(req, res, next){
 
 
         var tempPath = photo.path;
-        var uploadDate = new Date().toISOString();
 
         var targetPath = path.join(__dirname, "../public/images/" + uploadDate + photo.name);
         var savePath = "/images/" + uploadDate + photo.name;
