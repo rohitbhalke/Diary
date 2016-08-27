@@ -6,12 +6,14 @@
 
 ##############################################################################################################
 
-        Remember to switch the database urls, use localhost when running in local,
-        while pushing to heroku convert it to use the mongolab url mentioned
+        Added properties file, which will tell where to point
+        Chage it to local when doing any developement changes
 
 
 #############################################################################################################
 
+For media storage we are using cloudinary.com
+Thanks cloudinary.com.
 
 A personalised diary where you can place all your emotions.
 

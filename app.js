@@ -1,12 +1,11 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
-var flash    = require('connect-flash');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -14,15 +13,21 @@ var create = require('./routes/create');
 var login = require('./routes/login');
 var profile = require('./routes/profile');
 var mongoose = require('mongoose');
+
+var batProperties = require('./config/properties.js');
+console.log('##################### DATABASE IN '+ batProperties.db + " ASSET SERVER IN : "+ batProperties.assetServer+"  ######################");
 var configDB = require('./config/database.js');
+var cloudinaryDB = require('./config/cloudinary');
 var multipart = require('connect-multiparty');
+var cloudinary = require('cloudinary');
 
 // configure database here
 
 console.log("Connecting TO database");
 mongoose.connect(configDB.url);
 console.log("Connection Success");
-
+cloudinary.config(cloudinaryDB.accountInfo);
+console.log("cloudinary asset server confib success");
 //require('./config/passport.js')(passport);
 
 var app = express();
