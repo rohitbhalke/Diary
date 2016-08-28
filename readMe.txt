@@ -17,6 +17,9 @@ Thanks cloudinary.com.
 
 A personalised diary where you can place all your emotions.
 
+Always run git status, to check which files have been modified.
+Then git diff -- file path in order to see what is changed
+
 
 to upload new codebase to heroku go to myapp folder
 git add .

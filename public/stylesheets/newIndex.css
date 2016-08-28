@@ -145,4 +145,7 @@ margin-left: 0%;
     body .container{
         width: 98%
     }
+    body .modal-dialog {
+        width : 98%;
+    }
 }
