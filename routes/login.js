@@ -23,7 +23,9 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
-router.get('/auth/facebook', passportFacebook.authenticateFacebook({scope:['email']}));
+router.get('/auth/facebook', function(){
+    passportFacebook.authenticateFacebook({scope:['email']})
+});
 
 // redirect for facebook and handle it here
 router.get('/auth/facebook/callback',function (req, res, next) {

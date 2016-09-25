@@ -15,7 +15,7 @@
      */
 
     var BatProperties = {
-        'db' : 'remote',
+        'db' : 'local',
         'assetServer' : 'remote'
     };
 
