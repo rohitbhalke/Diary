@@ -21,8 +21,6 @@ heroku local web ---- to open app in local
 for heroku deployed app
 existing user is
 
-name : bhalke
-password : bhalke
 
 some links
 https://dashboard.heroku.com/apps/arcane-basin-16762/settings
